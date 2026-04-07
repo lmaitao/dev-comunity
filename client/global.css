@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --background: rgb(16, 22, 34);
+        --foreground: rgb(250, 250, 250);
+        --card: rgb(26, 34, 51);
+        --card-foreground: rgb(250, 250, 250);
+        --popover: rgb(16, 22, 34);
+        --popover-foreground: rgb(250, 250, 250);
+        --primary: rgb(43, 108, 238);
+        --primary-foreground: rgb(255, 255, 255);
+        --secondary: rgb(26, 34, 51);
+        --secondary-foreground: rgb(250, 250, 250);
+        --muted: rgb(16, 22, 34);
+        --muted-foreground: rgb(161, 161, 161);
+        --accent: rgb(26, 34, 51);
+        --accent-foreground: rgb(250, 250, 250);
+        --destructive: rgb(255, 100, 103);
+        --destructive-foreground: rgb(250, 250, 250);
+        --border: rgb(43, 55, 74);
+        --input: rgb(43, 55, 74);
+        --ring: rgb(16, 22, 34);
+        --chart-1: rgb(145, 197, 255);
+        --chart-2: rgb(58, 129, 246);
+        --chart-3: rgb(37, 99, 239);
+        --chart-4: rgb(26, 78, 218);
+        --chart-5: rgb(31, 63, 173);
+        --sidebar: rgb(16, 22, 34);
+        --sidebar-foreground: rgb(250, 250, 250);
+        --sidebar-primary: rgb(20, 71, 230);
+        --sidebar-primary-foreground: rgb(250, 250, 250);
+        --sidebar-accent: rgb(38, 38, 38);
+        --sidebar-accent-foreground: rgb(250, 250, 250);
+        --sidebar-border: rgb(40, 40, 40);
+        --sidebar-ring: rgb(82, 82, 82);
+        --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+        --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+        --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        --radius: 0.75rem;
+        --shadow-x: -50px;
+        --shadow-y: -50px;
+        --shadow-blur: 0px;
+        --shadow-spread: -50px;
+        --shadow-opacity: 0;
+        --shadow-color: oklch(0 0 0);
+        --shadow-2xs: -50px -50px 0px -50px hsl(0 0% 0% / 0.00);
+        --shadow-xs: -50px -50px 0px -50px hsl(0 0% 0% / 0.00);
+        --shadow-sm: -50px -50px 0px -50px hsl(0 0% 0% / 0.00), -50px 1px 2px -51px hsl(0 0% 0% / 0.00);
+        --shadow: -50px -50px 0px -50px hsl(0 0% 0% / 0.00), -50px 1px 2px -51px hsl(0 0% 0% / 0.00);
+        --shadow-md: -50px -50px 0px -50px hsl(0 0% 0% / 0.00), -50px 2px 4px -51px hsl(0 0% 0% / 0.00);
+        --shadow-lg: -50px -50px 0px -50px hsl(0 0% 0% / 0.00), -50px 4px 6px -51px hsl(0 0% 0% / 0.00);
+        --shadow-xl: -50px -50px 0px -50px hsl(0 0% 0% / 0.00), -50px 8px 10px -51px hsl(0 0% 0% / 0.00);
+        --shadow-2xl: -50px -50px 0px -50px hsl(0 0% 0% / 0.00);
+        --tracking-normal: 0em;
+        --spacing: 0.25rem;
+    }
+
+    .dark {
+        --background: rgb(16, 22, 34);
+        --foreground: rgb(250, 250, 250);
+        --card: rgb(26, 34, 51);
+        --card-foreground: rgb(250, 250, 250);
+        --popover: rgb(16, 22, 34);
+        --popover-foreground: rgb(250, 250, 250);
+        --primary: rgb(43, 108, 238);
+        --primary-foreground: rgb(255, 255, 255);
+        --secondary: rgb(26, 34, 51);
+        --secondary-foreground: rgb(250, 250, 250);
+        --muted: rgb(16, 22, 34);
+        --muted-foreground: rgb(161, 161, 161);
+        --accent: rgb(26, 34, 51);
+        --accent-foreground: rgb(250, 250, 250);
+        --destructive: rgb(255, 100, 103);
+        --destructive-foreground: rgb(250, 250, 250);
+        --border: rgb(43, 55, 74);
+        --input: rgb(43, 55, 74);
+        --ring: rgb(16, 22, 34);
+        --chart-1: rgb(145, 197, 255);
+        --chart-2: rgb(58, 129, 246);
+        --chart-3: rgb(37, 99, 239);
+        --chart-4: rgb(26, 78, 218);
+        --chart-5: rgb(31, 63, 173);
+        --sidebar: rgb(16, 22, 34);
+        --sidebar-foreground: rgb(250, 250, 250);
+        --sidebar-primary: rgb(20, 71, 230);
+        --sidebar-primary-foreground: rgb(250, 250, 250);
+        --sidebar-accent: rgb(38, 38, 38);
+        --sidebar-accent-foreground: rgb(250, 250, 250);
+        --sidebar-border: rgb(40, 40, 40);
+        --sidebar-ring: rgb(82, 82, 82);
+        --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+        --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+        --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        --radius: 0.75rem;
+        --shadow-x: -50px;
+        --shadow-y: -50px;
+        --shadow-blur: 0px;
+        --shadow-spread: -50px;
+        --shadow-opacity: 0;
+        --shadow-color: oklch(0 0 0);
+        --shadow-2xs: -50px -50px 0px -50px hsl(0 0% 0% / 0.00);
+        --shadow-xs: -50px -50px 0px -50px hsl(0 0% 0% / 0.00);
+        --shadow-sm: -50px -50px 0px -50px hsl(0 0% 0% / 0.00), -50px 1px 2px -51px hsl(0 0% 0% / 0.00);
+        --shadow: -50px -50px 0px -50px hsl(0 0% 0% / 0.00), -50px 1px 2px -51px hsl(0 0% 0% / 0.00);
+        --shadow-md: -50px -50px 0px -50px hsl(0 0% 0% / 0.00), -50px 2px 4px -51px hsl(0 0% 0% / 0.00);
+        --shadow-lg: -50px -50px 0px -50px hsl(0 0% 0% / 0.00), -50px 4px 6px -51px hsl(0 0% 0% / 0.00);
+        --shadow-xl: -50px -50px 0px -50px hsl(0 0% 0% / 0.00), -50px 8px 10px -51px hsl(0 0% 0% / 0.00);
+        --shadow-2xl: -50px -50px 0px -50px hsl(0 0% 0% / 0.00);
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+@layer components {
+    .header {
+        @apply bg-background border-b border-border px-8 pb-4;
+    }
+
+    .header__content {
+        @apply flex-row items-center gap-2
+    }
+
+    .header__logo {
+        @apply bg-primary rounded-full flex items-center justify-center h-10 w-10
+    }
+}
