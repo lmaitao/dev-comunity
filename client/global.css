@@ -128,10 +128,14 @@
     }
 
     .header__content {
-        @apply flex-row items-center gap-2
+        @apply flex-row items-center gap-2;
     }
 
     .header__logo {
-        @apply bg-primary rounded-full flex items-center justify-center h-10 w-10
+        @apply bg-primary rounded-full flex items-center justify-center h-10 w-10;
+    }
+
+    .form-group {
+        @apply flex flex-col gap-2;
     }
 }
