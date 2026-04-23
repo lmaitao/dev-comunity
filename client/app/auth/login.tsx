@@ -1,5 +1,5 @@
 import {View } from "react-native";
-import LoginForm from "@/modules/components/login-form";
+import LoginForm from "@/modules/auth/components/login-form";
 
 export default function LoginScreen() {
     return (

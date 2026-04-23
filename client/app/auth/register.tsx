@@ -1,6 +1,5 @@
-import RegisterForm from "@/modules/components/register-form";
+import RegisterForm from "@/modules/auth/components/register-form";
 import { View } from "react-native";
-
 
 export default function RegisterScreen() {
     return (

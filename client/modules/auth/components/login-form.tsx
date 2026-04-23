@@ -1,12 +1,11 @@
 import { View } from 'react-native'
-import { Text } from "../core/components/text";
-import { Card, CardContent } from "../core/components/card";
-import { Input } from "../core/components/input";
-import { Button } from "../core/components/button";
-import { Label } from "../core/components/label";
+import { Text } from "@/modules/core/components/text"; 
+import { Card, CardContent } from "@/modules/core/components/card";
+import { Input } from "@/modules/core/components/input";
+import { Button } from "@/modules/core/components/button";
+import { Label } from "@/modules/core/components/label";
 import { router } from "expo-router";
 import React from "react";
-
 
 export const LoginForm = () => {
 
