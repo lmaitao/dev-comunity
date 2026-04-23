@@ -4,10 +4,17 @@ import { Card, CardContent } from "../core/components/card";
 import { Input } from "../core/components/input";
 import { Button } from "../core/components/button";
 import { Label } from "../core/components/label";
+import { router } from "expo-router";
 import React from "react";
 
-const RegisterForm = () => {
-    return (
+
+export const RegisterForm = () => {
+
+  const onPress  = () => {
+    router.push('/auth/login')
+    }
+
+  return (
         <View className= "px-8 "  >
             <Text variant="h1" className='mb-8 text-center mt-10'>Registrate Para Iniciar Seccion </Text>
             <Card className='pt-6 pb-8'>
@@ -55,11 +62,14 @@ const RegisterForm = () => {
                       <Text variant='large'>Registrarse</Text>
                     </Button>
                     <Text className='mt-2 text-center'>¿Ya tienes una cuenta?</Text>
-                    <Text className='mt-2 text-center text-primary font-bold' >Inicia Seccion</Text>
+                    <Button variant='link' onPress={onPress} >
+                      <Text>Iniciar Seccion</Text>
+                    </Button>
                    </View>
               </CardContent>
             </Card>
         </View>
     )
 }
+
 export default RegisterForm;
