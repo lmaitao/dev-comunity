@@ -4,48 +4,14 @@ import { Card, CardContent } from "@/modules/core/components/card";
 import { Input } from "@/modules/core/components/input";
 import { Button } from "@/modules/core/components/button";
 import { Label } from "@/modules/core/components/label";
-import { router, useRouter } from "expo-router";
-import { useState } from "react"
+import { router } from "expo-router";
+import { useRegister } from '../hooks/use-register';
+
 
 
 export const RegisterForm = () => {
 
-  const router = useRouter();
-
-  const [isPending, setIsPending] = useState(false);
-
-  const [form, setForm] = useState({
-    name: "",
-    lastName: "",
-    email: "",
-    password: ""
-  })
-
-  const handleSubmit = async () => {
-    setIsPending(true)
-
-      const response = await fetch("http://192.168.1.31:54321/rest/v1/users", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(
-          {
-             name: form.name,
-             lastName: form.lastName,
-             email: form.email,
-             password: form.password,
-          })
-      })
-
-      if (response.ok) {
-        alert("Usuario registrado correctamente")
-        setIsPending(false)
-        return;
-      }
-        alert("Error al registrar el usuario")
-        setIsPending(false)
-  }
+  const {form, onSubmit, isPending, onChangeText} = useRegister();
 
   const onPress  = () => {
     router.push('/auth/login')}
@@ -59,30 +25,24 @@ export const RegisterForm = () => {
                     <Label>Ingresa Tus Nombres</Label>
                     <Input
                       placeholder="Nombres"
-                      keyboardType="default"
-                      autoCapitalize='none'
                       value={form.name}
-                      onChangeText={(text) => setForm({ ...form, name: text })}
+                      onChangeText={(text) => onChangeText("name", text)}
                     />
                   </View>
                   <View className='form-group'>
                     <Label>Ingresa Tus Apellidos</Label>
                     <Input
                       placeholder="Apellidos"
-                      keyboardType="default"
-                      autoCapitalize='none'
-                      value={form.lastName}
-                      onChangeText={(text) => setForm({ ...form, lastName: text })}
+                      value={form.lastname}
+                      onChangeText={(text) => onChangeText("lastname", text)}
                     />
                   </View>
                   <View className='form-group'>
                     <Label>Ingresa Tu Correo Electronico</Label>
                     <Input
                       placeholder="Email"
-                      keyboardType="email-address"
-                      autoCapitalize='none'
                       value={form.email}
-                      onChangeText={(text) => setForm({ ...form, email: text })}
+                      onChangeText={(text) => onChangeText("email", text)}
                     />
                   </View>
                   <View className='form-group'>
@@ -90,12 +50,11 @@ export const RegisterForm = () => {
                     <Input
                       placeholder="Password"
                       secureTextEntry
-                      autoCapitalize='none'
                       value={form.password}
-                      onChangeText={(text) => setForm({ ...form, password: text })}
+                      onChangeText={(text) => onChangeText("password", text)}
                       />
                   </View>
-                    <Button disabled={isPending} onPress={handleSubmit}>
+                    <Button disabled={isPending} onPress={onSubmit}>
                       {
                         isPending
                         ? (
