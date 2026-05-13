@@ -11,11 +11,16 @@ export default function RootLayout() {
   return (
     <QueryClientProvider client={queryClient}>
     <Stack
-        initialRouteName="auth"
-        screenOptions={{ headerShown: false }}
+        screenOptions={{ 
+          headerShown: false,
+          contentStyle:{
+            backgroundColor: "#000000",
+          }
+         }}
     >
+      <Stack.Screen name="index" />
       <Stack.Screen name="auth" />
-      <Stack.Screen name="posts" />
+      <Stack.Screen name="(root)" />
     </Stack>
     </QueryClientProvider>
   );

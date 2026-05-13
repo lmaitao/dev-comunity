@@ -5,7 +5,7 @@ import { Input } from "@/modules/core/components/input";
 import { Button } from "@/modules/core/components/button";
 import { Label } from "@/modules/core/components/label";
 import { router } from "expo-router";
-import { useRegister } from '../hooks/use-register';
+import { useRegister } from '../../core/hooks/use-register';
 
 
 

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { registerUser } from "../actions/register-user";
+import { registerUser } from "../../auth/actions/register-user";
 import { useMutation } from "@tanstack/react-query";
 
 export const useRegister = () => {
